@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Time Table</title>
+</head>
+
+<body>
+
+    <h1>College Time Table</h1>
+
+    <table border="1" cellpadding="10">
+
+        <tr>
+            <th>Day</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Subject Name</th>
+            <th>Faculty Name</th>
+        </tr>
+
+        {% for slot in timetable %}
+
+        <tr>
+            <td>{{ slot.day }}</td>
+            <td>{{ slot.start_time }}</td>
+            <td>{{ slot.end_time }}</td>
+            <td>{{ slot.subject_name }}</td>
+            <td>{{ slot.faculty_name }}</td>
+        </tr>
+
+        {% empty %}
+
+        <tr>
+            <td colspan="5">No timetable records available.</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>
